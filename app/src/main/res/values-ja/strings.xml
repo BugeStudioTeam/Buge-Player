@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Buge Player</string>
+    <string name="media_channel_name">再生コントロール</string>
+    <string name="media_channel_description">Buge Player のメディア再生コントロール</string>
+    <string name="external_media">外部メディア</string>
+    <string name="opened_from_another_app">ほかのアプリから開きました</string>
+    <string name="opened_media">開いたメディア</string>
+    <string name="close_player">プレーヤーを閉じる</string>
+    <string name="back_10_seconds">10 秒戻る</string>
+    <string name="forward_10_seconds">10 秒進む</string>
+    <string name="play">再生</string>
+    <string name="pause">一時停止</string>
+    <string name="fullscreen">全画面</string>
+    <string name="exit_fullscreen">全画面を終了</string>
+    <string name="live">ライブ</string>
+</resources>

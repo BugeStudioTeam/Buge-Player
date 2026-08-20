@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Buge Player</string>
+    <string name="media_channel_name">Wiedergabe</string>
+    <string name="media_channel_description">Steuerelemente für die Medienwiedergabe von Buge Player</string>
+    <string name="external_media">Externe Medien</string>
+    <string name="opened_from_another_app">Aus einer anderen App geöffnet</string>
+    <string name="opened_media">Geöffnete Medien</string>
+    <string name="close_player">Player schließen</string>
+    <string name="back_10_seconds">10 Sekunden zurück</string>
+    <string name="forward_10_seconds">10 Sekunden vor</string>
+    <string name="play">Wiedergabe</string>
+    <string name="pause">Pause</string>
+    <string name="fullscreen">Vollbild</string>
+    <string name="exit_fullscreen">Vollbild beenden</string>
+    <string name="live">LIVE</string>
+</resources>

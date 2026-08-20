@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Buge Player</string>
+    <string name="media_channel_name">播放控制</string>
+    <string name="media_channel_description">Buge Player 的媒体播放控制</string>
+    <string name="external_media">外部媒体</string>
+    <string name="opened_from_another_app">从其他应用打开</string>
+    <string name="opened_media">已打开的媒体</string>
+    <string name="close_player">关闭播放器</string>
+    <string name="back_10_seconds">后退 10 秒</string>
+    <string name="forward_10_seconds">前进 10 秒</string>
+    <string name="play">播放</string>
+    <string name="pause">暂停</string>
+    <string name="fullscreen">全屏</string>
+    <string name="exit_fullscreen">退出全屏</string>
+    <string name="live">直播</string>
+</resources>

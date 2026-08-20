@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Buge Player</string>
+    <string name="media_channel_name">Playback</string>
+    <string name="media_channel_description">Controls for Buge Player media playback</string>
+    <string name="external_media">External media</string>
+    <string name="opened_from_another_app">Opened from another app</string>
+    <string name="opened_media">Opened media</string>
+    <string name="close_player">Close player</string>
+    <string name="back_10_seconds">Back 10 seconds</string>
+    <string name="forward_10_seconds">Forward 10 seconds</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="fullscreen">Fullscreen</string>
+    <string name="exit_fullscreen">Exit fullscreen</string>
+    <string name="live">LIVE</string>
+</resources>

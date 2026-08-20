@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Buge Player</string>
+    <string name="media_channel_name">Воспроизведение</string>
+    <string name="media_channel_description">Элементы управления воспроизведением мультимедиа Buge Player</string>
+    <string name="external_media">Внешний медиафайл</string>
+    <string name="opened_from_another_app">Открыто из другого приложения</string>
+    <string name="opened_media">Открытый медиафайл</string>
+    <string name="close_player">Закрыть проигрыватель</string>
+    <string name="back_10_seconds">Назад на 10 секунд</string>
+    <string name="forward_10_seconds">Вперёд на 10 секунд</string>
+    <string name="play">Воспроизвести</string>
+    <string name="pause">Пауза</string>
+    <string name="fullscreen">Полный экран</string>
+    <string name="exit_fullscreen">Выйти из полноэкранного режима</string>
+    <string name="live">В ЭФИРЕ</string>
+</resources>

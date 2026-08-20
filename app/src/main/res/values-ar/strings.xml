@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Buge Player</string>
+    <string name="media_channel_name">عناصر التحكم بالتشغيل</string>
+    <string name="media_channel_description">عناصر التحكم في تشغيل الوسائط في Buge Player</string>
+    <string name="external_media">وسائط خارجية</string>
+    <string name="opened_from_another_app">تم الفتح من تطبيق آخر</string>
+    <string name="opened_media">وسائط مفتوحة</string>
+    <string name="close_player">إغلاق المشغّل</string>
+    <string name="back_10_seconds">رجوع 10 ثوانٍ</string>
+    <string name="forward_10_seconds">تقديم 10 ثوانٍ</string>
+    <string name="play">تشغيل</string>
+    <string name="pause">إيقاف مؤقت</string>
+    <string name="fullscreen">ملء الشاشة</string>
+    <string name="exit_fullscreen">إنهاء ملء الشاشة</string>
+    <string name="live">مباشر</string>
+</resources>

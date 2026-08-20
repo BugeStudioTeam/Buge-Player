@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Buge Player</string>
+    <string name="media_channel_name">재생 제어</string>
+    <string name="media_channel_description">Buge Player 미디어 재생 제어</string>
+    <string name="external_media">외부 미디어</string>
+    <string name="opened_from_another_app">다른 앱에서 열었습니다</string>
+    <string name="opened_media">열린 미디어</string>
+    <string name="close_player">플레이어 닫기</string>
+    <string name="back_10_seconds">10초 뒤로</string>
+    <string name="forward_10_seconds">10초 앞으로</string>
+    <string name="play">재생</string>
+    <string name="pause">일시중지</string>
+    <string name="fullscreen">전체 화면</string>
+    <string name="exit_fullscreen">전체 화면 종료</string>
+    <string name="live">라이브</string>
+</resources>

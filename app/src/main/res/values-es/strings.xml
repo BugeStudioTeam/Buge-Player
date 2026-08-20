@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Buge Player</string>
+    <string name="media_channel_name">Reproducción</string>
+    <string name="media_channel_description">Controles de reproducción multimedia de Buge Player</string>
+    <string name="external_media">Contenido multimedia externo</string>
+    <string name="opened_from_another_app">Abierto desde otra aplicación</string>
+    <string name="opened_media">Contenido multimedia abierto</string>
+    <string name="close_player">Cerrar reproductor</string>
+    <string name="back_10_seconds">Retroceder 10 segundos</string>
+    <string name="forward_10_seconds">Avanzar 10 segundos</string>
+    <string name="play">Reproducir</string>
+    <string name="pause">Pausa</string>
+    <string name="fullscreen">Pantalla completa</string>
+    <string name="exit_fullscreen">Salir de pantalla completa</string>
+    <string name="live">EN DIRECTO</string>
+</resources>

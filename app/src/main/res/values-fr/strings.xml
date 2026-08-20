@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Buge Player</string>
+    <string name="media_channel_name">Lecture</string>
+    <string name="media_channel_description">Commandes de lecture multimédia de Buge Player</string>
+    <string name="external_media">Média externe</string>
+    <string name="opened_from_another_app">Ouvert depuis une autre application</string>
+    <string name="opened_media">Média ouvert</string>
+    <string name="close_player">Fermer le lecteur</string>
+    <string name="back_10_seconds">Reculer de 10 secondes</string>
+    <string name="forward_10_seconds">Avancer de 10 secondes</string>
+    <string name="play">Lire</string>
+    <string name="pause">Pause</string>
+    <string name="fullscreen">Plein écran</string>
+    <string name="exit_fullscreen">Quitter le plein écran</string>
+    <string name="live">DIRECT</string>
+</resources>
