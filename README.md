@@ -18,7 +18,10 @@
 ## 📸 Screenshots
 
 <div style="overflow-x: auto; white-space: nowrap; padding: 10px 0;">
-NONE NOW
+
+<img src="https://raw.githubusercontent.com/BugeStudioTeam/Buge-Player/main/images/screenshots/1.png" alt="Buge Player 1" width="120"/>
+<img src="https://raw.githubusercontent.com/BugeStudioTeam/Buge-Player/main/images/screenshots/2.png" alt="Buge Player 2" width="120"/>
+
 </div>
 
 ---
