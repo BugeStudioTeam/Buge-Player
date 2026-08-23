@@ -19,8 +19,8 @@ android {
         applicationId = "com.buge.player"
         minSdk = 26
         targetSdk = 35
-        versionCode = 17
-        versionName = "1.4.3"
+        versionCode = 24
+        versionName = "1.5.8"
     }
 
     signingConfigs {
@@ -36,8 +36,9 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
+            // Fuck: disable R8 minification for faster builds
+            isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

@@ -71,9 +71,11 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun consumeExternalMediaIntent(intent: Intent?) {
-        ExternalMediaIntent.toBugeMedia(this, intent)
-            ?.takeIf { it.uri.startsWith("http://") || it.uri.startsWith("https://") }
-            ?.let(viewModel::openExternalMedia)
+        val media = ExternalMediaIntent.toBugeMedia(this, intent) ?: return
+        // Fuck: handle both network streams AND local files
+        // If it's a network stream, open in external player mode.
+        // For local files, also open in external player mode to keep the same UX.
+        viewModel.openExternalMedia(media)
     }
 
     private fun requestMediaPermission() {

@@ -88,16 +88,21 @@ import kotlin.math.max
 class ExternalPlayerActivity : ComponentActivity() {
     private val viewModel: BugeViewModel by viewModels()
     private var externalMedia by mutableStateOf<BugeMedia?>(null)
+    private var hasHandledIntent = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         window.setDimAmount(0f)
         enableEdgeToEdge()
+
+        // Fuck: handle intent properly, if no media then bail out
         if (!handleExternalIntent(intent)) {
             finish()
             return
         }
+        hasHandledIntent = true
+
         setContent {
             val state by viewModel.uiState.collectAsStateWithLifecycle()
             val player by viewModel.player.collectAsStateWithLifecycle()
@@ -127,11 +132,16 @@ class ExternalPlayerActivity : ComponentActivity() {
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         setIntent(intent)
-        if (!handleExternalIntent(intent)) stopPlaybackAndExit()
+        if (!handleExternalIntent(intent)) {
+            stopPlaybackAndExit()
+        }
     }
 
     private fun handleExternalIntent(intent: Intent): Boolean {
-        val media = ExternalMediaIntent.toBugeMedia(this, intent) ?: return false
+        val media = ExternalMediaIntent.toBugeMedia(this, intent)
+        if (media == null) {
+            return false
+        }
         externalMedia = media
         viewModel.play(media)
         return true

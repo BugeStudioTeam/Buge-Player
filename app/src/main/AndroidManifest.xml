@@ -28,12 +28,19 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <!-- External player - only VIEW, no SEND bullshit -->
+        <activity
+            android:name=".ExternalPlayerActivity"
+            android:exported="true"
+            android:theme="@style/Theme.BugePlayer.ExternalPlayer"
+            android:excludeFromRecents="true"
+            android:taskAffinity=""
+            android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|uiMode">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="http" />
-                <data android:scheme="https" />
                 <data android:mimeType="audio/*" />
                 <data android:mimeType="video/*" />
             </intent-filter>

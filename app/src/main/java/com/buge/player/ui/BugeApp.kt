@@ -457,20 +457,55 @@ private fun HeroCard(snapshot: PlayerSnapshot, text: AppText, onPlay: () -> Unit
         shape = MaterialTheme.shapes.extraLarge
     ) {
         Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.SpaceBetween) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Surface(color = MaterialTheme.colorScheme.primary, shape = CircleShape, modifier = Modifier.size(52.dp)) {
-                    Box(contentAlignment = Alignment.Center) { Icon(Icons.Filled.GraphicEq, null, tint = MaterialTheme.colorScheme.onPrimary) }
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                Surface(
+                    color = MaterialTheme.colorScheme.primary,
+                    shape = CircleShape,
+                    modifier = Modifier.size(52.dp)
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Icon(Icons.Filled.GraphicEq, null, tint = MaterialTheme.colorScheme.onPrimary)
+                    }
                 }
-                Spacer(Modifier.width(16.dp))
-                Column { Text("Buge Music", style = MaterialTheme.typography.headlineSmall); Text(text.playerReady, color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = .7f)) }
+                Column(modifier = Modifier.weight(1f)) {
+                    Text("Buge Music", style = MaterialTheme.typography.headlineSmall)
+                    Text(text.playerReady, color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = .7f))
+                }
             }
             Spacer(Modifier.height(20.dp))
             Text(snapshot.current?.title ?: "Every sound. Every screen.", style = MaterialTheme.typography.headlineSmall)
-            Text(snapshot.current?.artist ?: "HTTP · HTTPS · HLS / M3U8 · device media", color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = .78f))
+            Text(
+                snapshot.current?.artist ?: "HTTP · HTTPS · HLS / M3U8 · device media",
+                color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = .78f)
+            )
             Spacer(Modifier.height(16.dp))
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                FilledTonalButton(onClick = onAddStream) { Icon(Icons.Filled.AddLink, null); Spacer(Modifier.width(8.dp)); Text(text.addStream) }
-                if (snapshot.current != null) FilledTonalButton(onClick = onPlay) { Icon(Icons.Filled.PlayArrow, null); Spacer(Modifier.width(6.dp)); Text(text.nowPlaying) }
+            // Fuck: stack buttons vertically on narrow screens
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                FilledTonalButton(
+                    onClick = onAddStream,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Icon(Icons.Filled.AddLink, null)
+                    Spacer(Modifier.width(8.dp))
+                    Text(text.addStream)
+                }
+                if (snapshot.current != null) {
+                    FilledTonalButton(
+                        onClick = onPlay,
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Icon(Icons.Filled.PlayArrow, null)
+                        Spacer(Modifier.width(6.dp))
+                        Text(text.nowPlaying)
+                    }
+                }
             }
         }
     }
@@ -534,16 +569,26 @@ private fun SettingsScreen(settings: UserSettings, text: AppText, onSave: (UserS
 private fun LanguagePreference(settings: UserSettings, text: AppText, onSave: (UserSettings) -> Unit) {
     var showLanguageDialog by rememberSaveable { mutableStateOf(false) }
     PreferenceCard(text.language) {
-        Surface(
+        // Fuck: Card for proper rounded ripple
+        Card(
             onClick = { showLanguageDialog = true },
             shape = MaterialTheme.shapes.large,
-            color = MaterialTheme.colorScheme.surfaceContainerHigh,
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surfaceContainerHigh
+            ),
             modifier = Modifier.fillMaxWidth()
         ) {
-            Row(Modifier.padding(horizontal = 16.dp, vertical = 14.dp), verticalAlignment = Alignment.CenterVertically) {
+            Row(
+                Modifier.padding(horizontal = 16.dp, vertical = 14.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
                 Icon(Icons.Filled.Language, null, tint = MaterialTheme.colorScheme.primary)
                 Spacer(Modifier.width(12.dp))
-                Text(settings.language.displayName, modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleSmall)
+                Text(
+                    settings.language.displayName,
+                    modifier = Modifier.weight(1f),
+                    style = MaterialTheme.typography.titleSmall
+                )
                 Icon(Icons.Filled.ArrowBack, "Open language list", modifier = Modifier.rotate(180f))
             }
         }
@@ -559,38 +604,76 @@ private fun LanguagePreference(settings: UserSettings, text: AppText, onSave: (U
                 ) {
                     AppLanguage.entries.forEach { language ->
                         val selected = language == settings.language
-                        Surface(
-                            onClick = { onSave(settings.copy(language = language)); showLanguageDialog = false },
+                        // Fuck: Card for proper rounded ripple on each language item
+                        Card(
+                            onClick = {
+                                onSave(settings.copy(language = language))
+                                showLanguageDialog = false
+                            },
                             shape = if (selected) MaterialTheme.shapes.extraLarge else MaterialTheme.shapes.large,
-                            color = if (selected) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.surfaceContainerHigh,
+                            colors = CardDefaults.cardColors(
+                                containerColor = if (selected) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.surfaceContainerHigh
+                            ),
                             modifier = Modifier.fillMaxWidth()
                         ) {
-                            Row(Modifier.padding(horizontal = 16.dp, vertical = 13.dp), verticalAlignment = Alignment.CenterVertically) {
-                                Text(language.displayName, modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleMedium)
-                                if (selected) Icon(Icons.Filled.GraphicEq, "Selected", tint = MaterialTheme.colorScheme.primary)
+                            Row(
+                                Modifier.padding(horizontal = 16.dp, vertical = 13.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(
+                                    language.displayName,
+                                    modifier = Modifier.weight(1f),
+                                    style = MaterialTheme.typography.titleMedium
+                                )
+                                if (selected) {
+                                    Icon(
+                                        Icons.Filled.GraphicEq,
+                                        "Selected",
+                                        tint = MaterialTheme.colorScheme.primary
+                                    )
+                                }
                             }
                         }
                     }
                 }
             },
-            confirmButton = { TextButton(onClick = { showLanguageDialog = false }) { Text(text.cancel) } }
+            confirmButton = {
+                TextButton(onClick = { showLanguageDialog = false }) {
+                    Text(text.cancel)
+                }
+            }
         )
     }
 }
 
 @Composable
 private fun <T> OptionChips(options: List<Pair<T, String>>, selected: T, onSelect: (T) -> Unit) {
-    Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+    Row(
+        Modifier.horizontalScroll(rememberScrollState()),
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
         options.forEach { (value, label) ->
             val isSelected = selected == value
-            Surface(
+            // Fuck: Card gives proper rounded ripple
+            Card(
                 onClick = { onSelect(value) },
                 shape = if (isSelected) MaterialTheme.shapes.extraLarge else MaterialTheme.shapes.large,
-                color = if (isSelected) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.surfaceContainerHigh,
-                contentColor = if (isSelected) MaterialTheme.colorScheme.onSecondaryContainer else MaterialTheme.colorScheme.onSurface,
+                colors = CardDefaults.cardColors(
+                    containerColor = if (isSelected) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.surfaceContainerHigh,
+                    contentColor = if (isSelected) MaterialTheme.colorScheme.onSecondaryContainer else MaterialTheme.colorScheme.onSurface
+                ),
                 modifier = Modifier.height(40.dp)
             ) {
-                Text(label, modifier = Modifier.padding(horizontal = 18.dp, vertical = 10.dp), style = MaterialTheme.typography.labelLarge)
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        label,
+                        modifier = Modifier.padding(horizontal = 18.dp, vertical = 10.dp),
+                        style = MaterialTheme.typography.labelLarge
+                    )
+                }
             }
         }
     }
@@ -605,8 +688,19 @@ private fun PreferenceCard(title: String, content: @Composable () -> Unit) {
 
 @Composable
 private fun ToggleRow(title: String, checked: Boolean, onChange: (Boolean) -> Unit) {
-    Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow), shape = MaterialTheme.shapes.large, modifier = Modifier.fillMaxWidth().clickable { onChange(!checked) }) {
-        Row(Modifier.padding(horizontal = 18.dp, vertical = 13.dp), verticalAlignment = Alignment.CenterVertically) {
+    // Fuck: Card already handles rounded ripple correctly
+    Card(
+        onClick = { onChange(!checked) },
+        shape = MaterialTheme.shapes.large,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainerLow
+        ),
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Row(
+            Modifier.padding(horizontal = 18.dp, vertical = 13.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             Text(title, Modifier.weight(1f), style = MaterialTheme.typography.titleMedium)
             Switch(checked = checked, onCheckedChange = onChange)
         }
@@ -629,21 +723,54 @@ private fun EmptyCard(message: String) {
 }
 
 @Composable
-private fun MediaRow(media: BugeMedia, active: Boolean, favorite: Boolean, onPlay: () -> Unit, onFavorite: () -> Unit, onAddQueue: () -> Unit) {
+private fun MediaRow(
+    media: BugeMedia,
+    active: Boolean,
+    favorite: Boolean,
+    onPlay: () -> Unit,
+    onFavorite: () -> Unit,
+    onAddQueue: () -> Unit
+) {
+    // Fuck: use Card onClick instead of clickable modifier for proper rounded ripple
     Card(
-        modifier = Modifier.fillMaxWidth().clickable(onClick = onPlay),
-        colors = CardDefaults.cardColors(containerColor = if (active) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.surfaceContainerLow),
-        shape = MaterialTheme.shapes.large
+        onClick = onPlay,
+        colors = CardDefaults.cardColors(
+            containerColor = if (active) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.surfaceContainerLow
+        ),
+        shape = MaterialTheme.shapes.large,
+        modifier = Modifier.fillMaxWidth()
     ) {
-        Row(Modifier.padding(12.dp), verticalAlignment = Alignment.CenterVertically) {
+        Row(
+            Modifier.padding(12.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             MediaGlyph(media.kind, Modifier.size(52.dp))
             Spacer(Modifier.width(12.dp))
             Column(Modifier.weight(1f)) {
-                Text(media.title, style = MaterialTheme.typography.titleMedium, maxLines = 1, overflow = TextOverflow.Ellipsis)
-                Text("${media.artist} · ${formatTime(media.durationMs)}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                Text(
+                    media.title,
+                    style = MaterialTheme.typography.titleMedium,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+                Text(
+                    "${media.artist} · ${formatTime(media.durationMs)}",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
             }
-            IconButton(onClick = onFavorite) { Icon(if (favorite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder, null, tint = if (favorite) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant) }
-            IconButton(onClick = onAddQueue) { Icon(Icons.Filled.QueueMusic, null) }
+            IconButton(onClick = onFavorite) {
+                Icon(
+                    if (favorite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder,
+                    null,
+                    tint = if (favorite) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+            IconButton(onClick = onAddQueue) {
+                Icon(Icons.Filled.QueueMusic, null)
+            }
         }
     }
 }
@@ -656,15 +783,56 @@ private fun MediaGlyph(kind: MediaKind, modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun MiniPlayer(snapshot: PlayerSnapshot, videoFrame: Bitmap?, onOpen: () -> Unit, onTogglePlay: () -> Unit, onClose: () -> Unit) {
+private fun MiniPlayer(
+    snapshot: PlayerSnapshot,
+    videoFrame: Bitmap?,
+    onOpen: () -> Unit,
+    onTogglePlay: () -> Unit,
+    onClose: () -> Unit
+) {
     val media = snapshot.current ?: return
-    Surface(color = MaterialTheme.colorScheme.surfaceContainerHigh, modifier = Modifier.fillMaxWidth().clickable(onClick = onOpen)) {
-        Row(Modifier.padding(horizontal = 10.dp, vertical = 9.dp), verticalAlignment = Alignment.CenterVertically) {
-            IconButton(onClick = onClose) { Icon(Icons.Filled.Close, "Close current playback") }
+    // Fuck: use Card onClick for rounded ripple
+    Card(
+        onClick = onOpen,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainerHigh
+        ),
+        modifier = Modifier.fillMaxWidth(),
+        shape = MaterialTheme.shapes.small
+    ) {
+        Row(
+            Modifier.padding(horizontal = 10.dp, vertical = 9.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            IconButton(onClick = onClose) {
+                Icon(Icons.Filled.Close, "Close current playback")
+            }
             MiniProgressArtwork(media, videoFrame, snapshot, Modifier.size(48.dp))
             Spacer(Modifier.width(10.dp))
-            Column(Modifier.weight(1f)) { Text(media.title, style = MaterialTheme.typography.titleSmall, maxLines = 1, overflow = TextOverflow.Ellipsis); Text(media.artist, style = MaterialTheme.typography.bodySmall, maxLines = 1, overflow = TextOverflow.Ellipsis) }
-            if (snapshot.isBuffering) LinearProgressIndicator(Modifier.width(28.dp)) else IconButton(onClick = onTogglePlay) { Icon(if (snapshot.isPlaying) Icons.Filled.Pause else Icons.Filled.PlayArrow, if (snapshot.isPlaying) "Pause" else "Play") }
+            Column(Modifier.weight(1f)) {
+                Text(
+                    media.title,
+                    style = MaterialTheme.typography.titleSmall,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+                Text(
+                    media.artist,
+                    style = MaterialTheme.typography.bodySmall,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+            }
+            if (snapshot.isBuffering) {
+                LinearProgressIndicator(Modifier.width(28.dp))
+            } else {
+                IconButton(onClick = onTogglePlay) {
+                    Icon(
+                        if (snapshot.isPlaying) Icons.Filled.Pause else Icons.Filled.PlayArrow,
+                        if (snapshot.isPlaying) "Pause" else "Play"
+                    )
+                }
+            }
         }
     }
 }
