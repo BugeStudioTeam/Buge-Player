@@ -154,9 +154,9 @@
 
 <a href="https://www.star-history.com/?repos=BugeStudioTeam%2FBuge-Player&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=BugeStudioTeam/Buge-Player&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=BugeStudioTeam/Buge-Player&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=BugeStudioTeam/Buge-Player&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=BugeStudioTeam/Buge-Player&type=date&theme=dark&legend=top-left&sealed_token=LvM-fmeazFZi21DvqLy3SQY81YCsShE9U40-zL-9BwnwxGlxWYtv_YLI7dJk0JE5pELJG2B15eDlbGmi11nFW7Mk0u76-5LjxQYmOBd7xN_ps5G186cLIA" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=BugeStudioTeam/Buge-Player&type=date&legend=top-left&sealed_token=LvM-fmeazFZi21DvqLy3SQY81YCsShE9U40-zL-9BwnwxGlxWYtv_YLI7dJk0JE5pELJG2B15eDlbGmi11nFW7Mk0u76-5LjxQYmOBd7xN_ps5G186cLIA" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=BugeStudioTeam/Buge-Player&type=date&legend=top-left&sealed_token=LvM-fmeazFZi21DvqLy3SQY81YCsShE9U40-zL-9BwnwxGlxWYtv_YLI7dJk0JE5pELJG2B15eDlbGmi11nFW7Mk0u76-5LjxQYmOBd7xN_ps5G186cLIA" />
  </picture>
 </a>
 
