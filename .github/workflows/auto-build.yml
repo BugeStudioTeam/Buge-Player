@@ -29,7 +29,7 @@ jobs:
 
       - name: Decode keystore.jks
         run: |
-          echo "${{ secrets.KEYSTORE_JKS_BASE64 }}" | base64 -d > app/keystore.jks
+          echo "${{ secrets.KEYSTORE_JKS_BASE64 }}" | base64 -d > keystore.jks
           chmod 600 app/keystore.jks
 
       - name: Fix gradle.properties
