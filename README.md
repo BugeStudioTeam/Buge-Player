@@ -34,7 +34,7 @@
 | ----------------------------------- | -------------------------------------------------------------------------------- |
 | **Media3 Playback**                 | Powered by AndroidX Media3 for robust audio and video playback                   |
 | **Local & Network Media**           | Play files from device storage or stream HTTP/HTTPS and HLS/M3U8 content         |
-| **Material Design 3 Expressive UI** | Clean, system-themed interface with dynamic colors and Google Sans Flex typography |
+| **Material Design 3 Expressive** | Clean, system-themed interface with dynamic colors and Google Sans Flex typography |
 | **Privacy-First**                   | No ads, no analytics, no cloud backend — your data stays on your device          |
 
 ---
