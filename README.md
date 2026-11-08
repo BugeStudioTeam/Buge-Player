@@ -122,16 +122,27 @@
 ## 🌐 Supported Languages
 
 - English - en
+  
 - Français - fr
+  
 - Deutsch - de
+  
 - Русский - ru
+  
 - Português - pt
+  
 - Português (Brasil) - pt-rBR
+  
 - Español - es
+  
 - 中文 (简体) - zh
+  
 - 中文 (繁体) - zh-rTW
+  
+
 - العربية - ar
 - 日本語 - ja
+  
 - 한국어 - ko
 
 > [If you'd like to request support for a specific language, please open an issue and let us know](https://github.com/BugeStudioTeam/Buge-Player/issues)
