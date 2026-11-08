@@ -15,7 +15,7 @@
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 <div style="overflow-x: auto; white-space: nowrap; padding: 10px 0;">
 
@@ -26,9 +26,9 @@
 
 ---
 
-## ✨ Features
+## Features
 
-### 🚀 Core Capabilities
+### Core Capabilities
 
 | Feature                             | Description                                                                      |
 | ----------------------------------- | -------------------------------------------------------------------------------- |
@@ -39,7 +39,7 @@
 
 ---
 
-### 🎵 Music Player
+### Music Player
 
 - Full **Now Playing** experience with album artwork
 - **Queue management** — add, reorder, clear, and persist your queue
@@ -51,7 +51,7 @@
 
 ---
 
-### 🎬 Video Player
+### Video Player
 
 - Embedded video playback with immersive **full-screen mode**
 - Tap screen to reveal **centered play/pause** and an elevated seek bar
@@ -61,7 +61,7 @@
 
 ---
 
-### 📂 Open Media from Other Apps
+### Open Media from Other Apps
 
 - Register as a handler for supported audio/video MIME types via `ACTION_VIEW`
 - Open media from file managers, galleries, or third-party apps with **Open with → Buge Player**
@@ -70,7 +70,7 @@
 
 ---
 
-### 🌐 Network Media Playback
+### Network Media Playback
 
 - Built-in **Add network media** workflow
 - Supports direct MP3, AAC, MP4, WebM, MKV, and HLS `.m3u8` streams
@@ -78,7 +78,7 @@
 
 ---
 
-### 🎨 Personalization
+### Personalization
 
 | Option                        | Details                                                                 |
 | ----------------------------- | ----------------------------------------------------------------------- |
@@ -90,7 +90,7 @@
 
 ---
 
-### 📱 Interface Highlights
+### Interface Highlights
 
 - First-launch welcome flow with guided setup
 - Navigation transitions and rounded selection states
@@ -99,7 +99,7 @@
 
 ---
 
-## 📋 Requirements
+## Requirements
 
 | Requirement | Minimum Version          |
 | ----------- | ------------------------ |
@@ -109,7 +109,7 @@
 
 ---
 
-## 📦 Installation
+## Installation
 
 [<img src="https://raw.githubusercontent.com/BugeStudioTeam/Buge-App-Manager/refs/heads/main/images/README/Release/get-it-on-github.svg"
     alt="Get it on GitHub"
@@ -119,7 +119,7 @@
 
 ---
 
-## 🌐 Supported Languages
+## Supported Languages
 
 - English - en
   
@@ -149,7 +149,7 @@
 
 ---
 
-## 🔒 Privacy
+## Privacy
 
 | Aspect                              | Details                                                                 |
 | ----------------------------------- | ----------------------------------------------------------------------- |
@@ -161,7 +161,7 @@
 
 ---
 
-## ⭐ Star History
+## Star History
 
 <a href="https://www.star-history.com/?repos=BugeStudioTeam%2FBuge-Player&type=date&legend=top-left">
  <picture>
@@ -173,6 +173,6 @@
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **GNU General Public License v3.0**.
